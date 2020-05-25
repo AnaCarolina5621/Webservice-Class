@@ -1,0 +1,425 @@
+<html>
+    <title>Web Services</title>
+    <head>
+        <meta charset="utf-8">
+            
+            <link href="../css/estilo-principal.css" rel="stylesheet">
+            <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" type="text/css" href="../css/style.css" />
+            <script type="text/javascript" src="../js/jquery.js"></script>   
+    </head>
+    <body>
+        <div id="principal" class="gradiente-bg">
+            
+            <nav>
+                    <ul class="dl-submenu">
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="WebServices.html">Web Services</a></li>
+                        <li><a class="pagina-ativa"href=" Protocolos.html">Http</a></li>
+                        <li><a href="exemplo.html">Exemplo 1</a></li>
+						<li><a href="wsdl.html">WSDL</a></li>
+                    </ul>
+                    <nav id="img">
+                        <img src="../imagens/logocor.svg" class="topo" alt="logotipo do Unibta"  height="50" width="120">
+                    </nav>
+                
+            </nav>
+        </div>
+		<div id="centro" class="gradiente-bgi" >
+		   <h1 id="PaginaIndex">Protocolo HTTP </h1>
+          <div id="centroTxt" >
+		  <h2 id="textcenter">O que é?</h2>
+		  <p>HTTP é um protocolo de transferência que possibilita que as pessoas que inserem a URL do seu site na Web possam ver os conteúdos e
+		  dados que nele existem. A sigla vem do inglês Hypertext Transfer Protocol.		  
+		  </p>
+		 
+		  </div>
+		  <div id="centroTxt" >
+		  <h2 id="textcenter">Métodos</h2>
+		  
+		   </div>
+		  <div id="centroTxt" >
+		  <h3>1. GET</h3>
+		  <p>
+		  Essa é a requisição mais comum de todas. Através dessa requisição nós pedimos a representação de um recurso:
+		  que pode ser um arquivo html, xml, json, etc.
+		  </p>
+		  <hr>
+		  <h4>Exemplo:</h4>
+		  <p>
+			Imaginando que temos um arquivo chamado index.php em algum lugar de seu HD, se montarmos o par “nome=valor” abaixo poderemos manipular o(s) valor(res) “dentro” do script PHP.
+		  </p>
+		  <div id="centroTxtExemplo"  >	
+		  <span>index.php?nome=valor</span>
+		  </div>
+		  <p>		   
+		    O PHP utiliza-se de variáveis chamadas superglobais para lidar com “alguns aspectos”. Uma dessas variáveis é um array que acumula os valores recebidos pelo método GET.
+		  </p>
+		   <div id="centroTxtExemplo"  >
+		   <span>$_GET</span>
+		  </div>	  
+		  <p>No exemplo anterior devemos acessar da seguinte forma:
+		  </p>
+		   <div id="centroTxtExemplo"  >
+		   <code >
+		   <span id="hljs-meta">&lt;?php</span>
+		   <br>
+		   <span>echo $_GET [</span>
+		   <span id="hljs-red">'nome'</span>
+		   <span>];</span>
+		   </br>
+		   </br>
+			<span id="hljs-comment"># aqui eu utilizei o `echo`, mas poderia ser qualquer outra função, </span>
+			</br>
+			<span id="hljs-comment"># por exemplo, poderia utilizar o `var_dump()`</span>
+			</code>
+		  </div>
+		  </div>
+		  <div id="centroTxt" >
+		  <h3>2. POST</h3>
+		  <p>
+		  O método POST é utilizado quando queremos criar um recurso. Quando usamos POST, os dados vão no corpo da requisição e não na URI.
+		  </p>
+		  <hr> 
+		  <h4>Exemplo:</h4>
+		  <p>
+			Imaginando que temos um arquivo chamado index.php em algum lugar de seu HD, se montarmos o par “nome=valor” abaixo poderemos manipular o(s) valor(res) “dentro” do script PHP.
+		  </p>
+		  <div id="centroTxtExemplo"  >	
+		  
+		  <span>index.php?nome=valor
+		  </span>
+		  </div>
+		  <p>		   
+			Se enviarmos um par “nome=valor” para seu script PHP ele (o script) poderá trabalhar internamente com os valores enviados. A superglobal para o método POST chama-se…		  </p>
+		  <div id="centroTxtExemplo"  >
+		   <span>$_POST</span>
+		  </div>	  
+		  <p>
+		  Ela também é um array e poderá ser manipulada diretamente (vide artigo anterior).
+            Se enviarmos nome=valor para o servidor o seu script poderá fazer…
+		  </p>
+		   <div id="centroTxtExemplo"  >
+		   <code >
+		   <span id="hljs-meta">&lt;?php</span>
+		   <br>
+		   <span> var_dump($_POST[</span>
+		   <span id="hljs-red">'nome'</span>
+		   <span>]);</span>
+		 
+			</code>
+		  </div>
+		  </div>
+		  <div id="centroTxt" >		  
+		  <h3>3. PUT</h3>
+		  <p>
+		  Requisita que um recurso seja "guardado" na URI fornecida. Se o recurso já existir, ele deve ser atualizado. Se não existir, pode ser criado.
+		  </p>
+		  <hr> 
+		  <h4>Exemplo:</h4>
+		  <p>Solicitação</p>  
+		  <div id="centroTxtExemplo" >		
+		  <code>
+		 <span>
+		 PUT /new.html HTTP/1.1
+		 </span>
+		  </br>
+		 <span>
+		 Host: example.com
+		 </span>
+		  </br>
+		 <span>
+         Content-type: text/html
+		 </span>
+		  </br>
+		 <span>
+         Content-length: 16
+		 </span>
+		 </br>
+		 </br>
+		 <span><</span>
+		 p > New File <
+		 </span>p >
+		  </code>
+		  </div>
+		  <p>Resposta</p>  
+		  <p>Se o recurso de destino não tem uma representação atual e a requisição PUT foi criada com sucesso, então o 
+		  servidor original deve informar o agente de usuário enviando uma resposta 201 (Created).
+		  </p>
+		  <div id="centroTxtExemplo" >		
+		  <code>
+		  <span>
+		  HTTP/1.1 201 Created
+		  </span>
+		  </br>
+		  <span>
+		  Content-Location: /new.html
+		  </span>
+		  </code>
+		  </div>
+		  <p>Se o recurso de destino tem uma representação atual e essa representação é modificada com sucesso de acordo com o estado de 
+		  representação em anexo, então o servidor original deve enviar também uma resposta 200 (OK) or a 204 (No Content) 
+		  para indicar a conclusão da requisição.</p>
+		   <div id="centroTxtExemplo" >		
+		  <code>
+		  <span>
+			HTTP/1.1 204 No Content
+		  </span>
+		  </br>
+		  <span>
+			Content-Location: /existing.html
+		  </span>
+		  </code>
+		  </div>		  
+		  </div>
+		  <div id="centroTxt" >		 
+		  <h3>4. DELETE</h3>
+		  <p>
+		  Exclui o recurso especificado
+		  </p>
+		  <hr>  
+		  <h4>Exemplo:</h4>
+		   <p>Solicitação</p>  
+		  <div id="centroTxtExemplo" >		
+		  <code>
+			<span>
+			DELETE /arquivo.html HTTP/1.1
+		   </span>
+		   </code>
+		  </div>
+		  <p>Resposta</p>  
+		  <p>
+		  Se um método DELETE for aplicado com sucesso, poderão ter muitos códigos de status de resposta possíveis:</p>
+		  <p>&nbsp &nbsp -Um código de status 202 (Accepted) se a ação provavelmente teve sucesso, porém ainda não foi promulgada.</p>
+		  <p>&nbsp &nbsp -Um código de status 204 (No Content)  é se a ação foi pomulgada e nenhuma outra informação deve ser fornecida.</p>
+		  <p>&nbsp &nbsp -Um código de status 200 (OK) é se a ação foi promulgada e a mensagem de resposta inclui uma representação descrevendo o status.</p>
+		  </p>
+		  <div id="centroTxtExemplo" >		
+		  <code>
+		  <span>
+		   HTTP/1.1 200 OK
+		  </span>
+		  </br>
+		  <span>
+			Date: Wed, 21 Oct 2015 07:28:00 GMT 
+		   </span>
+		   </br>
+		   <span><  </span><span id="hljs-red">html    </span> <span> > </span>
+		   </br>
+			 <span> &nbsp < </span> <span id="hljs-red">body  </span> <span> > </span>
+			  </br>
+			 <span> &nbsp &nbsp < </span> <span id="hljs-red">h1 </span> <span> > </span> <span>Arquivo deletado <span>< /</span> <span id="hljs-red"> h1 </span> <span> > </span>
+			  </br>
+		 <span>&nbsp < / </span>  <span id="hljs-red">body </span> <span> > </span>
+		  </br>
+		 <span>< / </span>  <span id="hljs-red">html </span> <span> > </span>
+		  </span>
+		  </code>
+		  </div>
+		  </div>
+		  
+		  <div id="centroTxt" >		
+		  <h3>5. TRACE</h3>
+		  <p>
+		  Devolve a mesma requisição que for enviada veja se houve mudança e/ou adições feitas por servidores intermediários.
+		  </p>
+		  <hr> 
+		  <h4>Exemplo:</h4>
+		  <p>Entrada</p>
+		   <div id="centroTxtExemplo" >		
+		   <code>
+		   <span> nc www.myhost.com 80</span>
+		   <br>
+		   <span>TRACE /mypage.html HTTP/1.1</span>
+		   <br>
+		   <span>Host: www.myhost.com</span>
+		  </div>
+		  
+		   <p>Saida</p>
+		   <div id="centroTxtExemplo" >		
+		   <code>
+		   <span> HTTP/1.1 405 Method Not Allowed</span>
+		   <br>
+		   <span>Server: Apache-Coyote/1.1</span>
+		   <br>
+		   <span>X-Content-Type-Options: nosniff</span>
+		   <br>
+		   <span>X-Frame-Options: SAMEORIGIN</span>
+		   <br>
+		   <span>X-XSS-Protection: 1</span>
+		   <br>
+		   <span>Set-Cookie: JSESSIONID=rfyji7QBFFld7HwMGLVM+F8s.undefined; Path=/</span>
+		   <br>
+           <span>Content-Type: text/html;charset=utf-8</span>
+		   <br>
+		   <span>Content-Length: 1125</span>
+		   <br>
+		   <span>Date: Fri, 06 Mar 2015 06:06:29 GMT</span>
+		   <br>
+		  </div>
+		  </div>
+		  <div id="centroTxt" >		 
+		  <h3>6. OPTIONS</h3>
+		  <p>
+		  Retorna os métodos HTTP suportados pelo servidor para a URL especificada
+		  </p>
+		  <hr>
+		  <h4>Exemplo:</h4>
+		  <p> Para descobrir quais tipos de requisição um servidor suporta, é possível utilizar o curl e enviar uma requisição OPTIONS:</p>
+		  
+		   <div id="centroTxtExemplo" >		
+		  <code>
+		  <span>curl -X OPTIONS http://example.org -i</span>
+		  </code>
+		  </div> 
+		  <p>A resposta terá um cabeçalho  Allow com os métodos permitidos</p>
+		     <div id="centroTxtExemplo" >		
+		   <code>
+		   <span> HTTP/1.1 200 OK</span>
+		   <br>
+		   <span>Allow: OPTIONS, GET, HEAD, POST</span>
+		   <br>
+		   <span>Cache-Control: max-age=604800</span>
+		   <br>
+		   <span>Date: Thu, 13 Oct 2016 11:45:00 GMT</span>
+		   <br>
+		   <span>Expires: Thu, 20 Oct 2016 11:45:00 GMT</span>
+		   <br>
+		   <span>Server: EOS (lax004/2813)</span>
+		   <br>
+           <span>x-ec-custom-error: 1</span>
+		   <br>
+		   <span>Content-Length: 0</span>
+		   <br>
+		   </code>
+		  </div>
+		  </div>
+		  <div id="centroTxt" >		 
+		  <h3>7. PATCH</h3>
+		  <p>
+		   Serve para atualizar partes de um recurso, e não o recurso todo.
+		  </p>
+		  
+		  <hr> 
+		  <h4>Exemplo:</h4>
+		    <p>
+		  Requisição
+		  </p>
+		   <div id="centroTxtExemplo" >		
+		   <code>
+		  <span> PATCH /file.txt HTTP/1.1 </span>
+		   <br>
+		   <span>Host: www.example.com</span>
+		   <br>
+		   <span>Content-Type: application/example</span>
+		   <br>
+		   <span>If-Match: "e0023aa4e"</span>
+		   <br>
+		   <span>Content-Length: 100</span>
+		   <br>
+		   <span>[descrição das mudanças]</span>
+		   <br>
+		   </code>
+		  </div>
+		  <p>Resposta</p>
+		   <div id="centroTxtExemplo" >		
+		  <span> HTTP/1.1 204 No Content </span>
+		   <br>
+		   <span>Content-Location: /arquivo.txt</span>
+		   <br>
+		   <span>ETag: "e0023aa4f"</span>
+		   <br>
+		   </code>
+		  </div>
+		  </div>
+		  <div id="centroTxt" >		 
+		  <h3>8. CONNECT</h3>
+		  <p>
+		  Converte a requisição de conexão para um túnel TCP/IP transparente, geralmente para facilitar a comunicação criptografada com SSL (HTTPS) através de um proxy HTTP não criptografado.
+		  </p>
+		  <hr>
+		  <h4>Exemplo:</h4>
+		  <p>
+		  O navegador envia uma solicitação HTTP CONNECT ao proxy:
+		  </p>
+		   <div id="centroTxtExemplo" >		
+		  <code>
+		  <span>  CONNECT www.microsoft.com:443 HTTP/1.0 </span>
+		   <br>
+		   <span>User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko</span>
+		   <br>
+		   <span> Host: www.microsoft.com</span>
+		   <br>
+		   <span> Content-Length: 0</span>
+		   <br>
+		   <span>DNT: 1</span>
+		   <br>
+		   <span> Connection: Keep-Alive</span>
+		   <br>
+		   <span>  Pragma: no-cache</span>
+		   <br>
+		   </code>
+		  </div>
+		   <p>
+		  O proxy retorna HTTP / 1.0 200 indicando que a conexão solicitada foi estabelecida:
+		  </p>
+		   <div id="centroTxtExemplo" >		
+		  <code>
+		  <span>HTTP/1.0 200 Connection Established</span>
+		   <br>
+		   <span>FiddlerGateway: Direct</span>
+		   <br>
+		   <span>StartTime: 11:56:22.008</span>
+		   <br>
+		   <span>Connection: close</span>
+		   <br>
+		   <span>EndTime: 11:56:22.538</span>
+		   <br>
+		   <span>ClientToServerBytes: 1416</span>
+		   <br>
+		   <span>ServerToClientBytes: 1358</span>
+		   <br>
+		   </code>
+		  </div>
+		  </div>
+		  <div id="centroTxt" >		 
+		  <h3>9. HEAD</h3>
+		  <p>
+		  Retorna somente os cabeçalhos de uma resposta.
+		  </p>
+		  <hr>
+		  <h4>Exemplo:</h4>
+		  <p>
+			Requisição
+		  </p>
+		   <div id="centroTxtExemplo" >		
+		  <code>
+		  <span>HEAD /echo/head/json HTTP/1.1</span>
+		   <br>
+		   <span>Authorization: Bearer mt0dgHmLJMVQhvjpNXDyA83vA_PxH23Y</span>
+		   <br>
+		   <span>Accept: application/json</span>
+		   <br>
+		   <span>Host: reqbin.com</span>
+		   <br>
+		  </code>
+		  </div>
+		    <p>
+			Resposta
+		  </p>
+		   <div id="centroTxtExemplo" >		
+		  <code>
+		  <span>HTTP/1.1 200 OK</span>
+		   <br>
+		   <span>Content-Length: 19</span>
+		   <br>
+		   <span>Content-Type: application/json</span>
+		   <br>
+		   
+		  </code>
+		  </div>
+		  </div>
+        </div>
+
+    </body>
+</html>

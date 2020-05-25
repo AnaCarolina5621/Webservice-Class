@@ -1,0 +1,136 @@
+<html>
+    <title>Web Services</title>
+    <head>
+        <meta charset="utf-8">
+        
+        <link href="../css/estilo-principal.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
+        <script type="text/javascript" src="../js/jquery.js"></script>   
+    </head>
+    <body>
+        <div id="principal" class="gradiente-bg">
+            <nav>
+                    <ul class="dl-submenu">
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="WebServices.html">Web Services</a></li>
+                        <li><a href="Protocolos.html">Http</a></li>
+                        <li><a class="pagina-ativa" href="exemplo.html">Exemplo 1</a></li>
+						<li><a href="wsdl.html">WSDL</a></li>
+                    </ul>
+                    <nav id="img">
+                        <img src="../imagens/logocor.svg" class="topo" alt="logotipo do Unibta"  height="50" width="120">
+                    </nav>
+            </nav>
+        </div>
+		<div id="centro" class="gradiente-bgi" >
+		   <h1 id="PaginaIndex">Criação de um Web Service </h1>
+          <div id="centroTxt" >
+		  <h2>Passo 1:</h2><h3>Baixar o Eclipse, Apache Axis e o Apache TOMCAT</h3>
+		  <p>Para baixar o eclipse se redirecione a seguinte página:</p>
+		  <a href="https://www.eclipse.org/downloads/packages/release/mars/r/eclipse-ide-java-ee-developers">Página Eclipse IDE Java EE for Developers<a/>
+	    <p>Para baixar o Apache se redirecione a seguinte página:</p>
+		  <a href="http://tomcat.apache.org/download-70.cgi">Página Apache TOMCAT 7<a/>
+		  <p>Para baixar o Apache se redirecione a seguinte página:</p>
+		  <a href="http://ftp.unicamp.br/pub/apache/axis/axis2/java/core/1.7.9/axis2-1.7.9-bin.zip">Página Apache Axis<a/>
+	
+		</div>
+		   <div id="centroTxt" >
+		  <h2>Passo 2:</h2><h3>Descompactar a pasta.</h3>
+		  <p>Para descompactar a pasta do eclipse e do apache tomcat e apache axis você pode usar o winzip do proprio windows ou então baixar o Winrar no link a seguir:</p>
+		  <a href="https://www.win-rar.com/start.html?&L=0">Página Winrar<a/>
+		  </div>
+		  <div id="centroTxt" >
+		  <h2>Passo 3:</h2><h3>Abrir o Eclipse.</h3>
+		  <p>Para abrir o eclipse basta ir na pasta que você descompactou o eclipse e clicar no aplicativo eclipse e selecionar o diretorio onde seu projeto será salvo como nas imagens a seguir</p>
+		     <img src="../imagens/passo3.JPG" class="topo" alt="passo3" width ="40%" height="30%">
+			 <img src="../imagens/passo03.JPG" class="topo" alt="passo3" width ="30%" height="30%">
+		  </div>
+		  <div id="centroTxt" >
+		  <h2>Passo 4:</h2><h3>Configurar e instalar Apache TOMCAT.</h3>
+		  <p>Basta seguir o seguinte processo demonstrado nas imagens a seguir.</p>
+			 <h5>1. abrir Preferences</h5>
+			 <img src="../imagens/passo4-1.JPG" class="topo" alt="passo4" width ="50%" height="50%">
+			 <br> <br> <hr><br> <br>
+			 <h5>2. adicionar server</h5>
+			 <img src="../imagens/passo4-2.JPG" class="topo" alt="passo4" width ="50%" height="50%">
+			 <br> <br> <hr><br> <br>
+			 <h5>3. selecionar apache 7</h5>
+ 			 <img src="../imagens/passo4-3.JPG" class="topo" alt="passo4" width ="50%" height="50%">
+			 <br> <br> <hr><br> <br>
+			 <h5>4. incluir caminho da pasta que foi descompactada do apache</h5>
+			 <img src="../imagens/passo4-4.JPG" class="topo" alt="passo4" width ="50%" height="50%">
+			 <br> <br> <hr><br> <br>
+			 <h5>5. verificar se carregou o apache na lista e concluir</h5>
+			 <img src="../imagens/passo4-5.JPG" class="topo" alt="passo4" width ="50%" height="50%">
+
+		  </div>
+		  <div id="centroTxt" >
+		  <h2>Passo 5:</h2><h3>Incluir o plugin do Axis no eclipse</h3>
+		 <p> para adicionar o axix ao eclipse basta seguir os processos demonstrados nas seguintes imagens</p>
+		<h5>1. abrir Preferences</h5>
+		<img src="../imagens/passo4-1.JPG" class="topo" alt="passo5" width ="50%" height="50%">
+		<br> <br> <hr><br> <br>
+		<h5>2. Configurar axis2 preferences</h5>
+		<p> O caminho na imagem é o caminho onde foi feita a extração do axis baixado no passo 1.</p>
+		<img src="../imagens/passo5-1.JPG" class="topo" alt="passo5" width ="50%" height="50%">
+		</div>
+		<div id="centroTxt" >
+		  <h2>Passo 6:</h2><h3>Criando um novo projeto</h3>
+		 <p> para criar um novo projeto basta seguir os processos demonstrados nas seguintes imagens</p>
+			<h5>1. Criar Novo</h5>
+			 <img src="../imagens/passo6-1.JPG" class="topo" alt="passo6" width ="50%" height="60%">
+			 <br> <br> <hr><br> <br>
+			 <h5>2. Selecionar Dynamic Web Project</h5>
+			 <img src="../imagens/passo6-2.JPG" class="topo" alt="passo6" width ="50%" height="60%">
+			 <br> <br> <hr><br> <br>
+			 <h5>3. Preencher Nome do projeto  e localização do mesmo</h5>
+			 <img src="../imagens/passo6-3.JPG" class="topo" alt="passo6" width ="50%" height="60%">
+			 <br> <br> <hr><br> <br>
+			 <h5>4. Selecionar a pasta src como patch de construção</h5>
+			 <img src="../imagens/passo6-4.JPG" class="topo" alt="passo6" width ="50%" height="60%">
+			 <br> <br> <hr><br> <br>
+			 <h5>5. Criar uma classe dentro do patch</h5>
+			 <img src="../imagens/passo6-5.JPG" class="topo" alt="passo6" width ="50%" height="60%">
+			 <br> <br> <hr><br> <br>
+			 <h5>6. Dar um nome ao pacote que ela irá pertencer e o nome da classe</h5>
+			 <img src="../imagens/passo6-6.JPG" class="topo" alt="passo6" width ="50%" height="60%">
+			 <br> <br> <hr><br> <br>
+			 <h5>7. Incluir a função que irá ser realizada</h5>
+			 <img src="../imagens/passo6-7.JPG" class="topo" alt="passo6" width ="50%" height="60%">
+			 <br> <br> <hr><br> <br>
+			 <h5>8. Selecionar a classe e criar um web service apartir dela</h5>
+			 <img src="../imagens/passo6-8.JPG" class="topo" alt="passo6" width ="50%" height="60%">
+			 <br> <br> <hr><br> <br>
+			 <h5>9. Passar os parametros a seguir para o web service</h5>
+			 <img src="../imagens/passo6-9.JPG" class="topo" alt="passo6" width ="50%" height="60%">
+			 <br> <br> <hr><br> <br>
+			 <h5>10. Verificar informações e seguir</h5>
+			 <img src="../imagens/passo6-10.JPG" class="topo" alt="passo6" width ="50%" height="60%">
+			 <br> <br> <hr><br> <br>
+			 <h5>11. Iniciar o server</h5>
+			 <img src="../imagens/passo6-11.JPG" class="topo" alt="passo6" width ="50%" height="60%">
+			 <br> <br> <hr><br> <br>
+			 <h5>12. Confirmar o test facillity</h5>
+			 <img src="../imagens/passo6-12.JPG" class="topo" alt="passo6" width ="50%" height="60%">
+			 <br> <br> <hr><br> <br>
+			 <h5>13. Gerar o proxy</h5>
+			 <img src="../imagens/passo6-13.JPG" class="topo" alt="passo6" width ="50%" height="60%">
+			 <br> <br> <hr><br> <br>
+			 <h5>14. Finalizar</h5>
+			 <img src="../imagens/passo6-14.JPG" class="topo" alt="passo6" width ="50%" height="60%">
+			 <br> <br> <hr><br> <br>
+			 <h5>15. Testar via pagina web</h5>
+			 <img src="../imagens/passo6-15.JPG" class="topo" alt="passo6" width ="50%" height="60%">
+			 <br> <br> <hr><br> <br>
+			 <h5>16. Abrir TCP/IP Monitor</h5>
+			 <img src="../imagens/passo6-16.JPG" class="topo" alt="passo6" width ="50%" height="40%">
+			 <br> <br> <hr><br> <br>
+			 <h5>17. Verificar xml de requisição e resposta</h5>
+			 <img src="../imagens/passo6-17.JPG" class="topo" alt="passo6" width ="60%" height="70%">
+			 <br> <br> <hr><br> <br>
+			 
+		</div>
+		  </div>
+    </body>
+</html>

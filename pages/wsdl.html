@@ -1,0 +1,73 @@
+<html>
+   <title>Web Services</title>
+    <head>
+        <meta charset="utf-8">
+        <link href="../css/estilo-principal.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
+        <script type="text/javascript" src="../js/jquery.js"></script>   
+    </head>
+    <body>
+        <div id="principal" class="gradiente-bg">
+            <nav>
+                    <ul class="dl-submenu">
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="WebServices.html">Web Services</a></li>
+                        <li><a href="Protocolos.html">Http</a></li>
+                        <li><a 	href="exemplo.html">Exemplo 1</a></li>
+						<li><a class="pagina-ativa"href="wsdl.html">WSDL</a></li>
+                    </ul>
+                    <nav id="img">
+                        <img src="../imagens/logocor.svg" class="topo" alt="logotipo do Unibta"  height="50" width="120">
+                    </nav>
+            </nav>
+        </div>
+		<div id="centro" class="gradiente-bgi" >
+		   <h1 id="PaginaIndex">WSDL</h1>
+          <div id="centroTxt" >
+		  <h2 id="textcenter">O que é? </h2>
+		  <p>A Web Services Description Language (WSDL) é uma linguagem baseada em XML utilizada para descrever Web Services funcionando como um contrato do serviço.
+		  Trata-se de um documento escrito em XML que além de descrever o serviço, especifica como acessá-lo e quais as operações ou métodos
+		  disponíveis.
+		  </p>
+		  </div>
+		   <div id="centroTxt" >
+		  <h2 id="textcenter" >Objetos de WSDL</h2>
+		  <p>
+			<br>
+		    <b>Serviço</b>
+			<br>
+			&nbsp &nbspPode ser visto como um container para conjunto de funções de sistema que foram expostos a protocolo baseado em web;
+			<br><br>
+			<b>Porta</b>
+			<br>
+			&nbsp &nbsp Não é nada além da definição do endereço ou ponto de conexão para o Web Service. É representado tipicamente por uma URL simples com http;
+			<br><br>
+			<b>Binding</b>
+			<br>
+			&nbsp &nbsp Especifica a interface, define o estilo de SOAP binding (RPC ou Document) e transporte (protocolo SOAP). Seções de binding também definem as operações;
+			<br><br>
+			<b>Tipo de porta</b>
+			<br>
+			&nbsp &nbsp O elemento <portType> define um web service, as operações que podem ser executadas, e as mensagens trocadas para executar a operação;
+			<br><br>
+			<b>Operação</b>
+			<br>
+			&nbsp &nbsp Cada operação pode ser comparada à um método ou chamada de função em uma linguagem de programação tradicional. Aqui as ações soap são definidas e o tipo de mensagem é codificado;
+			<br><br>
+			<b>Mensagem</b>
+			<br>
+			&nbsp &nbsp Tipicamente, uma mensagem corresponde a uma operação. A mensagem contém as informações necessárias para executar a operação;
+			<br><br>
+			<b>Elemento</b>
+			<br>
+			&nbsp &nbsp Definidos com a tag <types>, consistem em um nome único e tipo de dado. Seu propósito é descrever um dado e definir uma tag que delimite os dados enviados;
+			<br><br>
+			<b>Arquivos XSD</b>
+			<br>
+			&nbsp &nbsp Elementos podem ser definidos em um esquema XML - XSD (XML Schema Definition). Pode estar no mesmo arquivo WSDL ou em arquivo separado.
+		  </p>
+		  </div>
+		  </div>
+    </body>
+</html>
